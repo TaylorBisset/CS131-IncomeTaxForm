@@ -35,6 +35,11 @@ int main()
     Submit for grading to confirm eight tests pass.
     */
 
+    /*
+    Step 4 (2 pts). Calculate amount of tax due (tax - withheld). If the amount due is negative the tax payer receives a refund. 
+    Output tax due or tax refund as positive values. Submit for grading to confirm all tests pass.
+    */
+
     int wages;
     int taxableInterest;
     int unemploymentCompensation;
