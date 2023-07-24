@@ -23,6 +23,12 @@ int main()
     Output error message if AGI is above $120000 and the program stops with no additional output. Submit for grading to confirm two tests pass.
     */
 
+    /*
+    Step 2 (3 pts). Identify deduction amount based on status: (1) Single=$12000 or (2) Married=$24000. 
+    Set status to 1 if not input as 1 or 2. Calculate taxable income (AGI - deduction). Set taxable income to zero if negative. 
+    Output deduction and taxable income. Submit for grading to confirm five tests pass.
+    */
+
     int wages;
     int taxableInterest;
     int unemploymentCompensation;
