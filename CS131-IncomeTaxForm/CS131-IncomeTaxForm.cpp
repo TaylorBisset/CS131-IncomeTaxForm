@@ -43,6 +43,14 @@ int main()
     cin >> taxesWithheld;
     
     AGI = wages + taxableInterest + unemploymentCompensation;
+    if (maritalStatus == 1) // deduction for single
+    {
+        AGI - 12'000;
+    }
+    else if (maritalStatus == 2) // deduction for married
+    {
+        AGI - 24'000;
+    }
 
     cout << "AGI: $" << AGI << endl;
     if (AGI > 120'000)
