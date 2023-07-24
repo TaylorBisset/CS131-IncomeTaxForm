@@ -33,8 +33,10 @@ int main()
     int taxableInterest;
     int unemploymentCompensation;
     int maritalStatus; // 1 = single and 2 = married
+    int deduction = 12'000;
     int taxesWithheld;
     int AGI; // AGI = wages + interest + unemployment
+    int taxableIncome;
 
     cin >> wages;
     cin >> taxableInterest;
@@ -45,17 +47,27 @@ int main()
     AGI = wages + taxableInterest + unemploymentCompensation;
     if (maritalStatus == 1) // deduction for single
     {
-        AGI - 12'000;
+        deduction = 12'000;
     }
     else if (maritalStatus == 2) // deduction for married
     {
-        AGI - 24'000;
+        deduction = 24'000;
     }
 
+    taxableIncome = AGI - deduction;
+    if (taxableIncome < 0)
+    {
+        taxableIncome = 0;
+    }
     cout << "AGI: $" << AGI << endl;
     if (AGI > 120'000)
     {
         cout << "Error: Income too high to use this form\n";
+    }
+    else
+    {
+        cout << "Deduction: $" << deduction << endl;
+        cout << "Taxable income: $" << AGI - deduction << endl;
     }
 
 // End program sequence
