@@ -49,6 +49,7 @@ int main()
     int AGI; // AGI = wages + interest + unemployment
     int taxableIncome;
     double federalTax = 0;
+    int taxRefund;
 
     cin >> wages;
     cin >> taxableInterest;
@@ -98,6 +99,8 @@ int main()
     {
         federalTax = 9200 + ((taxableIncome - 80'000) * 0.22);
     }
+
+    taxRefund = federalTax - taxesWithheld;
     
     // Output
     cout << "AGI: $" << AGI << endl;
@@ -110,6 +113,14 @@ int main()
         cout << "Deduction: $" << deduction << endl;
         cout << "Taxable income: $" << taxableIncome << endl;
         cout << "Federal tax: $" << federalTax << endl;
+        if (taxRefund < 0)
+        {
+            cout << "Tax refund: $" << fabs(taxRefund) << endl;
+        }
+        else
+        {
+            cout << "Taxes Owed: $" << fabs(taxRefund) << endl;
+        }
     }
 
 // End program sequence
