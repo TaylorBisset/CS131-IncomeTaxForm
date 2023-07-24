@@ -43,6 +43,7 @@ int main()
     int taxesWithheld;
     int AGI; // AGI = wages + interest + unemployment
     int taxableIncome;
+    double federalTax = 0;
 
     cin >> wages;
     cin >> taxableInterest;
@@ -65,6 +66,35 @@ int main()
     {
         taxableIncome = 0;
     }
+    // Federal tax brackets
+    if ((maritalStatus == 1 && taxableIncome <= 10'000) || (maritalStatus == 2 && taxableIncome <= 20'000))
+    {
+        federalTax = taxableIncome * 0.10;
+    }
+    // Single filers
+    else if (maritalStatus == 1 && taxableIncome > 10'000 && taxableIncome <= 40'000)
+    {
+        federalTax = 1000 + ((taxableIncome - 10'000) * 0.12);
+    }
+    else if (maritalStatus == 1 && taxableIncome > 40'000 && taxableIncome <= 85'000)
+    {
+        federalTax = 4600 + ((taxableIncome - 40'000) * 0.22);
+    }
+    else if (maritalStatus == 1 && taxableIncome < 85'000)
+    {
+        federalTax = 14500 + ((taxableIncome - 85'000) * 0.24);
+    }
+    // Married filers
+    else if (maritalStatus == 2 && taxableIncome > 20'000 && taxableIncome <= 80'000)
+    {
+        federalTax = 2000 + ((taxableIncome - 20'000) * 0.12);
+    }
+    else if (maritalStatus == 2 && taxableIncome < 80'000)
+    {
+        federalTax = 9200 + ((taxableIncome - 80'000) * 0.22);
+    }
+    
+    // Output
     cout << "AGI: $" << AGI << endl;
     if (AGI > 120'000)
     {
@@ -74,6 +104,7 @@ int main()
     {
         cout << "Deduction: $" << deduction << endl;
         cout << "Taxable income: $" << taxableIncome << endl;
+        cout << "Federal tax: $" << federalTax << endl;
     }
 
 // End program sequence
