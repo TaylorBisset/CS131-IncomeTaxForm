@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -28,6 +29,13 @@ int main()
     int maritalStatus; // 1 = single and 2 = married
     int taxesWithheld;
     int AGI; // AGI = wages + interest + unemployment
+    bool incomeTooHigh;
+
+    cin >> wages;
+    cin >> taxableInterest;
+    cin >> unemploymentCompensation;
+    cin >> maritalStatus;
+    cin >> taxesWithheld;
 
 
 // End program sequence
