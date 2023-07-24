@@ -29,6 +29,12 @@ int main()
     Output deduction and taxable income. Submit for grading to confirm five tests pass.
     */
 
+    /*
+    Step 3 (3 pts). Calculate tax amount based on exemption and taxable income (see tables below). 
+    Tax amount should be stored as a double and rounded to the nearest whole number using round(). 
+    Submit for grading to confirm eight tests pass.
+    */
+
     int wages;
     int taxableInterest;
     int unemploymentCompensation;
@@ -67,7 +73,7 @@ int main()
     else
     {
         cout << "Deduction: $" << deduction << endl;
-        cout << "Taxable income: $" << AGI - deduction << endl;
+        cout << "Taxable income: $" << taxableIncome << endl;
     }
 
 // End program sequence
