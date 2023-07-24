@@ -22,7 +22,12 @@ int main()
     Output error message if AGI is above $120000 and the program stops with no additional output. Submit for grading to confirm two tests pass.
     */
 
-
+    int wages;
+    int taxableInterest;
+    int unemploymentCompensation;
+    int maritalStatus; // 1 = single and 2 = married
+    int taxesWithheld;
+    int AGI; // AGI = wages + interest + unemployment
 
 
 // End program sequence
